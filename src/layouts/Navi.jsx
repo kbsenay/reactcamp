@@ -15,7 +15,7 @@ export default function Navi() {
 
                     />
 
-                    <Menu.Menu position='right'>
+                    <Menu.Menu position='right'> 
                         <Dropdown item text='Language'>
                             <Dropdown.Menu>
                                 <Dropdown.Item>English</Dropdown.Item>
