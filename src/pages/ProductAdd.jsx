@@ -1,7 +1,8 @@
 import React from 'react'
-import { Formik, Form, Field } from 'formik'
+import { Formik, Form, Field, ErrorMessage } from 'formik'
 import * as Yup from "yup";
-import { FormField, Button } from 'semantic-ui-react';
+import { FormField, Button, Label } from 'semantic-ui-react';
+import KodlamaIoTextInput from '../utilities/customFormControls/KodlamaIoTextInput';
 
 export default function ProductAdd() {
     const initialValues = { productName: "", unitPrice: 10 }
@@ -21,12 +22,14 @@ export default function ProductAdd() {
                 }}
             >
                 <Form className="ui form">
-                    <FormField>
+                    <KodlamaIoTextInput name="productName" placeholder="Ürün Adı"/>
+                    {/* <FormField>
                        <Field name="productName" placeholder="Ürün Adı"></Field>
-                    </FormField>
-                    <FormField>
-                    <Field name="unitPrice" placeholder="Ürün Fiyatı"></Field>
-                    </FormField>
+                       <ErrorMessage name="productName" render={error=>
+                           <Label pointing basic color="red" content={error}></Label>
+                       }></ErrorMessage>
+                    </FormField> */}
+                     <KodlamaIoTextInput name="unitPrice" placeholder="Ürün Fiyat"/>
                     <Button color="green" type="submit">Ekle</Button>
                 </Form>
             </Formik>
